@@ -1,0 +1,7 @@
+package com.purplishsocks.whofirst;
+
+public class Question {
+	
+	ArrayList <string> questions = new ArrayList<String>();
+
+}

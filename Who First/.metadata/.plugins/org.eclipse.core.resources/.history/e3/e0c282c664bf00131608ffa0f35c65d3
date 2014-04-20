@@ -1,0 +1,38 @@
+package com.purplishsocks.whofirst;
+
+import java.util.ArrayList;
+import java.util.Random;
+
+public class Question {
+
+	private ArrayList<String> questions;
+	private Random r;
+
+	public Question() {
+		super();
+
+		questions = new ArrayList<String>();
+		r = new Random();
+
+		storeQuestions();
+	}
+
+	public String nextQuestion() {
+		if (questions.isEmpty())
+			return "none";
+
+		return questions.get(r.nextInt(questions.size()));
+
+	}
+
+	private void storeQuestions() {
+		questions.add("Question1");
+		questions.add("Question2");
+		questions.add("Question3");
+		questions.add("Question4");
+		questions.add("Question5");
+		questions.add("Question6");
+
+	}
+
+}

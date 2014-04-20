@@ -1,0 +1,67 @@
+package com.purplishsocks.whofirst;
+
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TextView;
+
+public class QuestionActivity extends FragmentActivity {
+
+	private static TextView questionText;
+	private static Question q;
+	private QuestionFragment QuestFrag;
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_question);
+
+		questionText = new TextView(this);
+		q = new Question();
+
+		if (savedInstanceState == null) {
+			QuestFrag = new QuestionFragment();
+			getSupportFragmentManager().beginTransaction()
+					.add(R.id.questionContainer, QuestFrag).commit();
+		}
+
+	}
+
+	public static class QuestionFragment extends Fragment {
+
+		public QuestionFragment() {
+		}
+
+		@Override
+		public View onCreateView(LayoutInflater inflater, ViewGroup container,
+				Bundle savedInstanceState) {
+			View rootView = inflater.inflate(R.layout.fragment_question,
+					container, false);
+
+			questionText = (TextView) rootView.findViewById(R.id.question);
+			questionText.setText(q.nextQuestion());
+
+			return rootView;
+		}
+
+		public void setText(String text) {
+			TextView textView = (TextView) getView()
+					.findViewById(R.id.question);
+			textView.setText(text);
+		}
+	}
+
+	public void changeQuestion(View view) {
+		QuestFrag.setText(q.nextQuestion());
+	}
+	
+	@Override
+	public void onBackPressed() 
+	{
+	    this.finish();
+	    overridePendingTransition  (R.anim.left_slide_in, R.anim.left_slide_out);
+	}
+}

@@ -1,0 +1,37 @@
+package com.purplishsocks.whofirst;
+
+import java.util.ArrayList;
+import java.util.Random;
+
+public class Question {
+
+	private ArrayList<String> questions;
+	private Random r;
+
+	public Question() {
+		super();
+
+		questions = new ArrayList<String>();
+		r = new Random();
+
+		//storeQuestions();
+	}
+
+	public String nextQuestion() {
+		//if (questions.isEmpty())
+			return "none";
+
+		//return questions.get(r.nextInt(questions.size()));
+	}
+
+	private void storeQuestions() {
+		questions.add("The one that has the longest nose");
+		questions.add("The person closest to the nearest door");
+		questions.add("The one that has the most hair");
+		questions.add("Who has the whitest teeth");
+		questions.add("Who can draw the best");
+		questions.add("Who sleeps the least");
+
+	}
+
+}

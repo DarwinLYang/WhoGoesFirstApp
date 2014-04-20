@@ -1,0 +1,60 @@
+package com.purplishsocks.whofirst;
+
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
+public class SettingsActivity extends FragmentActivity {
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_settings);
+
+		if (savedInstanceState == null) {
+			getSupportFragmentManager().beginTransaction()
+					.add(R.id.settingsContainer, new SettingsFragment())
+					.commit();
+		}
+	}
+
+	public static class SettingsFragment extends Fragment {
+
+		public SettingsFragment() {
+		}
+
+		@Override
+		public View onCreateView(LayoutInflater inflater, ViewGroup container,
+				Bundle savedInstanceState) {
+			View rootView = inflater.inflate(R.layout.fragment_settings,
+					container, false);
+			return rootView;
+		}
+	}
+	
+	public void submitQuestion(View view) {
+		Intent i = new Intent(Intent.ACTION_SEND);
+		i.setType("message/rfc822");
+		i.putExtra(Intent.EXTRA_EMAIL  , new String[]{"recipient@example.com"});
+		i.putExtra(Intent.EXTRA_SUBJECT, "subject of email");
+		i.putExtra(Intent.EXTRA_TEXT   , "body of email");
+		try {
+		    startActivity(Intent.createChooser(i, "Send mail..."));
+		} catch (android.content.ActivityNotFoundException ex) {
+		    Toast.makeText(MyActivity.this, "There are no email clients installed.", Toast.LENGTH_SHORT).show();
+		}
+
+	}
+	
+	@Override
+	public void onBackPressed() 
+	{
+
+	    this.finish();
+	    overridePendingTransition  (R.anim.right_slide_in, R.anim.right_slide_out);
+	}
+
+}

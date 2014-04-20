@@ -1,0 +1,7 @@
+package com.purplishsocks.whofirst;
+
+public class Question {
+	
+	ArrayList (10);
+
+}

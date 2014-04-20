@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Who Goes First</string>
+    <string name="button_question">Who Goes First?</string>
+    <string name="button_setting">Settings</string>
+    <string name="button_next_question">Give me another</string>
+    <string name="button_submit_question">Submit Question</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_question">QuestionActivity</string>
+    <string name="title_activity_settings">SettingsActivity</string>
+    <string name="text_question_title">Question</string>
+    <string name="text_settings_title">Settings</string>
+    <string name="text_submit_question_title">Submit a Question</string>
+    <string name="text_default_question">Default Question</string>
+    <string name="text_submit_question_hint">question goes here</string>
+    <string name="description_main_button">main button</string>
+
+    <color name="green">#78AB46</color>
+    <color name="blue">#43BFC7</color>
+    <color name="red">#E77471</color>
+
+</resources>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Who Goes First</string>
+    <string name="button_send">Who Goes First?</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_question">QuestionActivity</string>
+    <string name="hello_world">Hello world!</string>
+    <color name="green">#78AB46</color>
+    <color name="blue">#43BFC7</color>
+    
+
+</resources>

@@ -1,0 +1,25 @@
+package com.purplishsocks.whofirst;
+
+import java.util.ArrayList;
+
+import android.R.string;
+
+public class Question {
+	
+	private ArrayList <string> questions = new ArrayList<string>();
+	
+	public Question(){
+		super();
+	}
+	
+	public String nextQuestion(){
+		if (questions.isEmpty())
+			return "none";
+		
+		String quest = "test";
+		
+		return quest;
+		
+	}
+
+}
